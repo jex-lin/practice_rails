@@ -1,0 +1,9 @@
+/* line 1, /Users/apple/projects/rails/practice_rails/app/assets/stylesheets/welcome.css.scss */
+.header {
+  border: 1px solid red;
+}
+
+/* line 5, /Users/apple/projects/rails/practice_rails/app/assets/stylesheets/welcome.css.scss */
+.footer {
+  border: 1px solid green;
+}
