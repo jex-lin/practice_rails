@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
 
-  layout 'layouts/application'
-
   def index
     @comments = Comment.all
     set_post
