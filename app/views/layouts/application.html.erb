@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%= render 'layouts/head' %>
+  <%= render 'layouts/head' %>
+  <%= stylesheet_link_tag "welcome", media: "all" %>
+  <%= yield :css_load %>
+  <%= csrf_meta_tags %>
 </head>
 <body id="page-top" class="index">
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/menu' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-<%= javascript_include_tag 'welcome' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/menu' %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+  <%= javascript_include_tag 'welcome' %>
+  <%= yield :js_load %>
 </body>
 </html>
 

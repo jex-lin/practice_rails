@@ -2,6 +2,7 @@
 <canvas id="c"></canvas>
 
 
+<% content_for :js_load do %>
 <script type="text/javascript">
   var c = document.getElementById("c");
   var ctx = c.getContext("2d");
@@ -55,3 +56,4 @@
   setInterval(draw, 70);
 
 </script>
+<% end %>
