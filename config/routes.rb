@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/jextest/:id', to: 'jextest#index'
+  get 'jextest/:id', to: 'jextest#index'
+
+
+  get 'others' => 'others#index', :as  => 'others'
+  get 'others/i18n' => 'others#i18n', :as  => 'others_i18n'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
