@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello %{name} :"
+  menu_home_page  : "Home page"
+  menu_posts      : "Posts"
+  menu_others     : "Others"

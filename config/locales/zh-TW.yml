@@ -1,2 +1,4 @@
 "zh-TW":
-  hello: "您好, %{name} :"
+  menu_home_page: "首頁"
+  menu_posts      : "文章"
+  menu_others     : "其他"
