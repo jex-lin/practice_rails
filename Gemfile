@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'guard-livereload'
+
+# Install unit test only in test and production    by jex 20140908
+group :test, :development do
+  gem "rspec"
+  gem "rspec-rails"
+end
