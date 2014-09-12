@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  validate :name,   :presence => true
-  validate :title,  :presence => true,
-                    :length => { :mininum => 5 }
+  validates :name, :presence => true
+  validates :title, :presence => true, :length => { :minimum => 5 }
+  validates :content, :presence => true
   has_many :comments, :dependent => :destroy
 end
