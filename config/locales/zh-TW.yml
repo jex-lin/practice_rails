@@ -1,4 +1,21 @@
 "zh-TW":
-  menu_home_page: "首頁"
-  menu_posts      : "文章"
-  menu_others     : "其他"
+# Menu
+  menu_home_page:   "首頁"
+  menu_posts:       "文章"
+  menu_others:      "其他"
+
+# Form helper
+  helpers:
+    label:
+      post:
+        name:     '名稱'
+        title:    '標題'
+        content:  '內容'
+
+# Form validation error messages
+  activerecord:
+    attributes:
+      post:
+        name:     '名稱'
+        title:    '標題'
+        content:  '內容'

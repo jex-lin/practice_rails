@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = Comment.all
+    @comments = @post.comments.all
   end
 
   def new
@@ -32,6 +32,8 @@ class PostsController < ApplicationController
   end
 
   def edit
+#@posts = Post.find(params[:id])
+# 壞了
   end
 
   def destroy

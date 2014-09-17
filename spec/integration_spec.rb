@@ -55,9 +55,9 @@ RSpec.describe Comment, :type => :model do
   end
 
   #測試comment是否包含 commenter body
-  it "should contain :commenter :body" do
+  it "should contain :commenter :content" do
     @comment.commenter
-    @comment.body
+    @comment.content
   end
 
   #測試commenter如果內容空白，就不能儲存
@@ -67,8 +67,8 @@ RSpec.describe Comment, :type => :model do
   end
 
   #測試body如果內容空白，就不能儲存
-  it ":body should not be blank" do
-    @comment.body = nil
+  it ":content should not be blank" do
+    @comment.content = nil
     @comment.save.should == false
   end
 
@@ -78,3 +78,34 @@ RSpec.describe Comment, :type => :model do
     $comment.macro.should == :belongs_to
   end
 end
+
+=begin
+文章底下可以看到該篇文章所有回應
+網站首頁是所有文章列表
+=end
+#這裡進行Post的view測試
+RSpec.describe "posts/show", :type => :view do
+  #建立post和comment的資料，讓同一筆post裡頭含有多筆comment
+  before(:each) do
+    @post = assign(:post, Post.create(:title => "Title", :content => "Content"))
+    @comment_1 = @post.comments.create(:content => "display_comment_1")
+    @comment_2 = @post.comments.create(:content => "display_comment_2")
+  end
+
+  #測試view裡面，post的顯示頁面要同時顯示他所有的comment
+  it "renders comments by post" do
+    render
+    rendered.should include("display_comment_1")
+    rendered.should include("display_comment_2")
+  end
+end
+
+#這裡進行route測試
+RSpec.describe "Routing root", :type => :routing do
+  #測試網站首頁是包含所有文章的post index頁面
+  it "to posts index" do
+    expect(:get => "/").to route_to("posts#index")
+  end
+end
+
+
