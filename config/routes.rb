@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :posts do
+  resources :posts do    # 關聯的話就要這樣寫
     resources :comments
   end
 
@@ -12,10 +12,18 @@ Rails.application.routes.draw do
     end
   end
 
-
-  get 'others' => 'others#index', :as  => 'others'
-  get 'others/show_env' => 'others#show_env'
-  get 'others/log' => 'others#log'
+# 這句在幫你建others的7個helper(但你後面only只要index, 不寫的話 update, show ... 都會生)
+# :except index  => 除了 index
+# collection : = others/abc
+# member : others/1/abc
+# namespace : 單純只想加一個無功能性的 url, 像是http://127.0.0.1:3000/dashboard/profile/verify,  dashboard就用namespace
+# 解析以上 : dashboard 是 namespace, 也是多餘的   profile 是 controller
+  resources :others, :only => [:index] do
+    collection do
+      get :show_env
+      get :log
+    end
+  end
   get 'test' => 'test#index', :as => 'test'
 
   # The priority is based upon order of creation: first created -> highest priority.
