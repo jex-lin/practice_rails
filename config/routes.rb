@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get 'others' => 'others#index', :as  => 'others'
+  get 'others/env' => 'others#env'
   get 'test' => 'test#index', :as => 'test'
 
   # The priority is based upon order of creation: first created -> highest priority.
