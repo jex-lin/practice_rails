@@ -1,17 +1,10 @@
 require "rails_helper"
 
-describe 'home page', :type => :feature do
-  before do
+describe 'Home page', :type => :feature do
+  scenario "See the header and footer" do
     visit '/'
-  end
-
-  context "Check view structure" do
-    it 'Check header' do
-      page.should have_content('This is header')
-    end
-    it 'Check footer' do
-      page.should have_content('This is footer')
-    end
+    page.should have_content('This is header')
+    page.should have_content('This is footer')
   end
 end
 
