@@ -43,6 +43,8 @@ gem 'guard-livereload'
 group :test, :development do
   gem "rspec"
   gem "rspec-rails"
+  gem 'capybara' # Webkit test,    require 'capybara/rspec'
 end
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x, install command : gem install rails-i18n -v '~> 4.0.0'
+

@@ -1,7 +1,7 @@
 <div>
   <div>
     <h2> <%= @comment.commenter %> </h2>
-    <p> <%= @comment.body %> </p>
+    <p> <%= @comment.content %> </p>
   </div>
   <%= link_to 'Edit', edit_post_comment_path(@post, @comment) %> |
   <%= link_to 'Back', post_path(@post) %>
