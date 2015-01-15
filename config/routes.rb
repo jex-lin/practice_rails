@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     collection do
       get :show_env
       get :log
+      get :rpi_cam
     end
   end
   get 'test' => 'test#index', :as => 'test'

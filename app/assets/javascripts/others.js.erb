@@ -1,0 +1,12 @@
+//= require jquery
+//= require jquery_ujs
+console.log('others.js onload <%= 'rails puts' %>');
+tmpimage = new Image();
+var url = "http://640e2a31.ngrok.com/?action=snapshot";
+function start() {
+    setTimeout(function () {
+        $('#rpiCam').attr('src', url + '&t=' + new Date().getTime());
+    }, 50);
+}
+tmpimage.src = url + '&t=' + new Date().getTime();
+$('#rpiCam').attr('src', tmpimage.src);

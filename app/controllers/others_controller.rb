@@ -19,4 +19,7 @@ class OthersController < ApplicationController
     render(:text => 'log')
   end
 
+  def rpi_cam
+  end
+
 end
